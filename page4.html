@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Snooze or Lose</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Modak&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    </head>
+    <style>
+        body{
+            background-color: #18273F;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-width: 100vw;
+        }
+        header{
+            background-color: #BECED2;
+            display: flex;
+            position: relative;
+            width: 100%;
+            height: fit-content;
+        }
+        #top{
+            position: relative;
+            display: flex;
+            min-height: 140px;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding-top: 10px;
+            padding-bottom: 20px;
+        
+        }
+        #top img{
+            width: 120px;/*figure out how to adjust based on vw*/ 
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+        #top p1{
+            font-size: 80px;/*figure out how to adjust based on vw*/ 
+            color: #1899E6;
+            margin-top: 14px;
+            margin-bottom: 0px;
+        }
+        #top p2{
+            font-size:80px;/*figure out how to adjust based on vw*/ 
+            color:#FA5B5A;
+            margin-top: 14px;
+            margin-bottom: 0px;            
+        }
+        #top p3{
+            font-size:80px;/*figure out how to adjust based on vw*/ 
+            color:white;
+            margin-top: 14px;
+            margin-bottom: 0px;
+            margin-right: 5px;            
+        }
+        .modak-regular {
+            font-family: "Modak", system-ui;
+            font-weight: 400;
+            font-style: normal;
+        }
+        .pixelify-sans-pixel {
+            font-family: "Pixelify Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 700;
+            font-style: normal;
+        }
+        .pixelify-sans-pixel2 {
+            font-family: "Pixelify Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+        }
+        pixelL{
+            display: flex;
+            align-items: flex-end;
+        }
+        pixelR{
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+
+        }
+        .square4{
+            width: 9px;
+            height: 36px;
+            background-color:#18273F;
+        }
+        .square3{
+            width: 9px;
+            height: 27px;
+            background-color:#18273F;
+        }
+        .square2{
+            width: 27px;
+            height: 18px;
+            background-color:#18273F;
+        }
+        .square1{
+            width: 36px;
+            height: 9px;
+            background-color:#18273F;
+        }
+        story{
+            height: fit-content;
+        }
+        #webtop{
+            width: 70%;
+            height: 50px;
+            background-color: black;
+            position: relative;
+            left: 15%;
+            right: 15%;
+            border: 2px solid white;
+            margin-top: 50px;
+            
+        }
+        #web{
+            width: 70%;
+            height: fit-content;
+            background-color: black;
+            position: relative;
+            left: 15%;
+            right: 15%;
+            border: 2px solid white;
+            border-top: 0;
+        }
+        dot{
+            display: flex;
+            margin-left: 15px;
+            width: 100%;
+            justify-content: flex-start;
+        }
+        .dots{
+            display: flex;
+            width: 15px;/*figure out how to adjust based on vw*/ 
+            height: 15px;/*figure out how to adjust based on vw*/ 
+            border-radius: 50%;
+            background-color: white;
+            margin-top: 17.5px;
+            margin-left: 7.5px;
+            margin-right: 7.5px;
+            align-items: flex-end;
+        }
+        .x{
+            display: flex;
+            color: white;
+            align-items: flex-end;
+            justify-content: flex-end;
+            margin-top:10px;
+            padding-left: 85%;/*figure out how to adjust based on vw*/ 
+        }
+        svg{
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            width: 30px;
+            height: 30px;
+            fill:white
+        }
+        #prbl{
+            width: 70%;
+            height: fit-content;
+            position:relative;
+            left: 15%;
+            right: 15%;
+        }
+        #prbl p{
+            color: white;
+            margin:0;
+            padding-top: 30px;
+            text-align: center;
+            font-size: 20px;
+        }
+        #score{ /*finish*/
+            width:100px;
+            height: 10px;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            margin-top: 3Opx;
+            margin-bottom: 30px;
+
+        }
+        footer {
+            margin: 0;
+            padding: 0;
+        }
+        #foot{
+            width: 100%;
+            height: 100%;
+            margin-top: 30px;
+            background-color: #BECED2;
+        }
+        footer p{
+            color: black;
+        }
+        /* Center button horizontally */
+        .center-button {
+            text-align: center;
+        }
+        .center-button button {
+            padding: 0px 20px;
+            font-size: 16px;
+            background-color: black;
+            color:#FA5B5A;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: "Pixelify Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+        }
+        /* Style for the score bar container */
+        .score-container {
+            width: 100%;
+            height: 30px;
+            background-color: #1899E6;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        /* Style for the progress bar */
+        .score-bar {
+            height: 100%;    
+            width: 0%; /* Initial width (score starts at 0%) */
+            background-color: #FA5B5A; 
+            border-radius: 10px;
+            transition: width 0.5s ease; /* Smooth transition when the score changes */
+        }
+    </style>
+    <body>
+        <header>
+            <!--Makes the top grey bar look like if it was pixelated-->
+            <pixelL>
+                </div><div class="square3"></div><div class="square2"></div><div class="square1"></div>
+            </pixelL>
+            <!--Makes the top grey bar with the title and the logo-->
+            <div id="top">
+                <p1 class="pixelify-sans-pixel">SNOOZE</p1><img src="SnoozeOrLooseLogo.png" alt="SnoozeOrLooseLogo"><p3 class="pixelify-sans-pixel">OR</p3><p2 class="pixelify-sans-pixel">LOSE</p2>
+            </div>
+            <!--Makes the top grey bar look like if it was pixelated-->
+            <pixelR>
+                <div class="square1"></div><div class="square2"></div><div class="square3"></div>
+            </pixelR>
+        </header>
+        <story>
+            <!--Makes the top part of the question window-->
+            <div id="webtop">
+                <dot>
+                    <div class="dots"></div><div class="dots"></div><div class="dots"></div>
+                    <div class="x">
+                        <svg viewBox="0 0 12 12">
+                            <line x1="1" y1="1" x2="11" y2="11" stroke="currentColor" stroke-width="2" />
+                            <line x1="1" y1="11" x2="11" y2="1" stroke="currentColor" stroke-width="2" />
+                        </svg>
+                    </div>
+                </dot>
+            </div>
+            <!--Makes the content part of the question-->
+            <div id="web">
+                <div id="prbl">
+                    <!--Need to input script tag here so the text is changing-->
+                    <p class="pixelify-sans-pixel2">
+                        Sleeping Beauty wakes up from her slumber after eating microwaved ramen, and now she feels like garbage. She really needs to start her work. It’s 6 PM, and she hasn’t done much for the day.   
+                    </p>
+                    <p class="pixelify-sans-pixel2" style="color: #FA5B5A;">What will you do?</p>
+                    <div id="options" class="pixelify-sans-pixel2">
+                        <p>I honestly feel terrible right now. I’m losing all motivation to do anything.</p>
+                        <div class="center-button" onclick="updateScoreAndNavigate(5, 'page6.html')">
+                            <button><u>Sit and do nothing. Scroll on the phone until dinnertime, and eat dinner in the dorm again.</u></button>
+                        </div>
+                        <p>Agh! I’m so behind! I can’t be like this for the first day of school!</p>
+                        <div class="center-button" onclick="updateScoreAndNavigate(0, 'page5.html')">
+                            <button><u>Work until finishing most homework and eat at the dining hall during a break.</u></button>
+                        </div>
+                        </div>
+                        <p class="pixelify-sans-pixel2" style="color: #FA5B5A;">Your sleep deficit vs academic success:</p>
+                            <!-- The progress bar to show the score -->
+                            <div class="score-container">
+                                <div class="score-bar" id="scoreBar"></div>
+                            </div>
+                    </div>
+                    <script>
+                        // Retrieve the current score from localStorage
+                        let currentScore = parseInt(localStorage.getItem('score')) || 0;  // Default to 0 if no score exists
+                        const maxScore = 100;
+
+                        // Update the score by adding more points
+                        function updateScoreAndNavigate(points, page) {
+                            currentScore += points;
+
+                            // Ensure the score stays within bounds
+                            if (currentScore < 0) {
+                                currentScore = 0;
+                            } else if (currentScore > maxScore) {
+                                currentScore = maxScore;
+                            }
+
+                            // Store the updated score in localStorage
+                            localStorage.setItem('score', currentScore);
+
+                            // Navigate to the next page
+                            window.location.href = page;
+                        }
+
+                        // Update the score bar here as well
+                        function updateScoreBar(score) {
+                            const percentage = (score / maxScore) * 100;
+                            document.getElementById('scoreBar').style.width = percentage + '%';
+                            document.getElementById('currentScore').textContent = score;
+                        }
+
+                        // Initialize the score display
+                        updateScoreBar(currentScore);
+                    </script>
+
+                </div>
+            </div>
+        </story>
+        <footer>
+            <div id="foot">
+                <p class="pixelify-sans-pixel2" style="text-align: center;">Build by Udita, Yerin, Micheal, Rahul, Filip</p>
+            </div>
+        </footer>
+    </body>
+</html>
+</html>
